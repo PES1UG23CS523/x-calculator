@@ -39,3 +39,18 @@ if __name__ == "__main__":
     print("🧮 Calculator Module")
     print(f"2 + 3 = {add(2, 3)}")
     print(f"5 - 2 = {subtract(5, 2)}")
+    
+
+# In src/calculator.py
+def multiply(a, b):
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both arguments must be numbers")
+    return a * b
+
+
+def divide(a, b):
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Division requires numeric inputs")
+    if b == 0:
+        raise ValueError(f"Cannot divide {a} by zero - division by zero is undefined")
+    return a / b
