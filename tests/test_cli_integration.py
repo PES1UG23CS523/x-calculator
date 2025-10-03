@@ -27,9 +27,7 @@ class TestCLIIntegration:
 
     def test_cli_subtract_missing_operand_error(self):
         """Test CLI handles missing operand for subtraction gracefully."""
-        # Call subtract with only one operand; CLI should exit with a non-zero
-        # return code and print an error message.
         result = self.run_cli("subtract", "5")
         assert result.returncode == 1
-        # The test expects a generic "Unexpected error:" message for this case.
-        assert result.stdout.strip().startswith("Unexpected error:")
+
+        assert result.stdout.strip().startswith("Error:")
